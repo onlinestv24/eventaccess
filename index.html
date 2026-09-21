@@ -1,0 +1,3621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Global Live Events | Sports, Music & Entertainment</title>
+
+<meta name="description" content="Discover sports, concerts, festivals, entertainment, movies, gaming, business and technology events from around the world.">
+<meta name="robots" content="index, follow">
+
+<style>
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
+body{
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background:#050b15;
+    color:#f8fafc;
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   PAGE BACKGROUND
+========================================================= */
+
+.page{
+    min-height:100vh;
+    background:
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(255,58,82,.13),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(35,104,255,.15),
+            transparent 34%
+        ),
+        #050b15;
+}
+
+
+/* =========================================================
+   HEADER / HERO
+========================================================= */
+
+.hero{
+    min-height:300px;
+    padding:58px 20px 60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(70,20,40,.40),
+            rgba(8,24,45,.92)
+        );
+
+    border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+.hero-inner{
+    width:100%;
+    max-width:1100px;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:7px 16px;
+
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:999px;
+
+    background:rgba(255,255,255,.04);
+
+    color:#d8e4f5;
+
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(38px,6vw,64px);
+    line-height:1.05;
+    font-weight:900;
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    color:#ff4758;
+}
+
+.hero p{
+    max-width:850px;
+    margin:20px auto 0;
+
+    color:#9fb1ca;
+
+    font-size:16px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   MAIN NAVIGATION
+========================================================= */
+
+.nav-wrap{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(5,11,21,.94);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+    width:100%;
+    max-width:1250px;
+
+    margin:auto;
+
+    min-height:64px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 18px;
+
+    gap:15px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:19px;
+    font-weight:900;
+
+    white-space:nowrap;
+}
+
+.logo-icon{
+    width:36px;
+    height:36px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        135deg,
+        #ff334f,
+        #ff7847
+    );
+
+    box-shadow:0 8px 25px rgba(255,55,75,.25);
+}
+
+.logo-text span{
+    color:#ff5362;
+}
+
+
+/* DESKTOP MENU */
+
+.desktop-nav{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.nav-link{
+    padding:9px 11px;
+
+    border-radius:9px;
+
+    color:#aebbd0;
+
+    font-size:13px;
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.nav-link:hover{
+    background:rgba(255,255,255,.07);
+    color:white;
+}
+
+
+/* CATEGORY BUTTON */
+
+.category-btn{
+    border:1px solid rgba(255,255,255,.13);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.03)
+        );
+
+    color:white;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:13px;
+    font-weight:800;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    transition:.2s;
+}
+
+.category-btn:hover{
+    border-color:rgba(255,71,87,.5);
+    background:rgba(255,71,87,.10);
+}
+
+.category-btn .arrow{
+    font-size:11px;
+    transition:.2s;
+}
+
+.category-btn.active .arrow{
+    transform:rotate(180deg);
+}
+
+
+/* CATEGORY DROPDOWN */
+
+.category-menu{
+    position:absolute;
+
+    top:calc(100% + 8px);
+    right:18px;
+
+    width:min(850px, calc(100vw - 30px));
+
+    padding:20px;
+
+    background:#0b1423;
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:18px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.55);
+
+    display:none;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap:18px;
+}
+
+.category-menu.show{
+    display:grid;
+}
+
+.category-group h3{
+    font-size:13px;
+    color:white;
+
+    margin-bottom:9px;
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.category-group a{
+    display:block;
+
+    padding:4px 0;
+
+    color:#91a3bd;
+
+    font-size:12px;
+
+    transition:.2s;
+}
+
+.category-group a:hover{
+    color:#ff5867;
+    transform:translateX(3px);
+}
+
+
+/* MOBILE BUTTON */
+
+.mobile-menu-btn{
+    display:none;
+
+    border:1px solid rgba(255,255,255,.13);
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    width:43px;
+    height:43px;
+
+    border-radius:10px;
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+
+/* MOBILE MENU */
+
+.mobile-menu{
+    display:none;
+
+    position:absolute;
+
+    top:calc(100% + 8px);
+    left:12px;
+    right:12px;
+
+    padding:14px;
+
+    background:#0a1321;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:16px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.6);
+
+    max-height:75vh;
+    overflow-y:auto;
+}
+
+.mobile-menu.show{
+    display:block;
+}
+
+.mobile-menu-section{
+    border-bottom:1px solid rgba(255,255,255,.07);
+    padding:8px 0;
+}
+
+.mobile-menu-section:last-child{
+    border-bottom:none;
+}
+
+.mobile-menu-section-title{
+    padding:8px 6px;
+
+    color:#ff5a68;
+
+    font-size:13px;
+    font-weight:900;
+}
+
+.mobile-menu a{
+    display:block;
+
+    padding:8px 8px;
+
+    color:#aebbd0;
+
+    font-size:13px;
+
+    border-radius:7px;
+}
+
+.mobile-menu a:hover{
+    background:rgba(255,255,255,.05);
+    color:white;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.container{
+    width:100%;
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:38px 20px 80px;
+}
+
+.section{
+    margin-bottom:62px;
+}
+
+.section-heading{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:24px;
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.section-line{
+    width:42px;
+    height:4px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        90deg,
+        #ff334f,
+        #ff8a4b
+    );
+}
+
+.section-title h2{
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:-.5px;
+}
+
+.section-description{
+    color:#7386a1;
+    font-size:12px;
+}
+
+
+/* =========================================================
+   EVENT GRID
+========================================================= */
+
+.event-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap:20px;
+}
+
+.event-card{
+    min-width:0;
+
+    background:#0a1321;
+
+    border:1px solid rgba(255,255,255,.09);
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.event-card:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(255,70,88,.38);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35);
+}
+
+
+/* IMAGE */
+
+.card-image{
+    position:relative;
+
+    height:190px;
+
+    overflow:hidden;
+
+    background:#111827;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .45s ease;
+}
+
+.event-card:hover .card-image img{
+    transform:scale(1.06);
+}
+
+
+/* DARK OVERLAY */
+
+.card-image::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.55),
+            transparent 60%
+        );
+}
+
+
+/* LIVE BADGE */
+
+.live-badge{
+    position:absolute;
+
+    z-index:2;
+
+    top:12px;
+    left:12px;
+
+    padding:6px 10px;
+
+    border-radius:7px;
+
+    background:#ff334f;
+
+    color:white;
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:.4px;
+
+    box-shadow:
+        0 5px 20px rgba(255,50,70,.3);
+}
+
+.live-dot{
+    display:inline-block;
+
+    width:6px;
+    height:6px;
+
+    margin-right:5px;
+
+    background:white;
+
+    border-radius:50%;
+}
+
+
+/* CARD CONTENT */
+
+.card-content{
+    padding:15px;
+}
+
+.card-category{
+    color:#ff5868;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
+
+    margin-bottom:5px;
+}
+
+.card-title{
+    font-size:16px;
+
+    line-height:1.35;
+
+    font-weight:850;
+
+    min-height:43px;
+}
+
+.card-meta{
+    color:#7286a3;
+
+    font-size:11px;
+
+    margin-top:7px;
+}
+
+.watch-btn{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+
+    margin-top:13px;
+
+    padding:10px 12px;
+
+    border-radius:9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff334f,
+            #ff604e
+        );
+
+    color:white;
+
+    font-size:12px;
+    font-weight:900;
+
+    transition:.2s;
+
+    box-shadow:
+        0 7px 20px rgba(255,51,79,.16);
+}
+
+.watch-btn:hover{
+    transform:translateY(-2px);
+
+    filter:brightness(1.08);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:35px 20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:#040912;
+
+    text-align:center;
+}
+
+.footer-logo{
+    font-size:20px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:#ff4e60;
+}
+
+footer p{
+    margin-top:9px;
+
+    color:#71839c;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media(max-width:1050px){
+
+    .desktop-nav .nav-link:nth-child(n+3){
+        display:none;
+    }
+
+    .event-grid{
+        grid-template-columns:
+            repeat(3, minmax(0,1fr));
+    }
+
+    .category-menu{
+        grid-template-columns:
+            repeat(3, minmax(0,1fr));
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media(max-width:760px){
+
+    .hero{
+        min-height:270px;
+
+        padding:
+            45px
+            18px
+            48px;
+    }
+
+    .hero h1{
+        font-size:40px;
+        letter-spacing:-1.5px;
+    }
+
+    .hero p{
+        font-size:14px;
+        line-height:1.65;
+    }
+
+    .nav{
+        min-height:60px;
+
+        padding:
+            0
+            13px;
+    }
+
+    .desktop-nav{
+        display:none;
+    }
+
+    .mobile-menu-btn{
+        display:flex;
+
+        align-items:center;
+        justify-content:center;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .logo-icon{
+        width:34px;
+        height:34px;
+    }
+
+    .container{
+        padding:
+            30px
+            13px
+            60px;
+    }
+
+    .section{
+        margin-bottom:45px;
+    }
+
+    .section-heading{
+        align-items:flex-start;
+        flex-direction:column;
+
+        gap:7px;
+
+        margin-bottom:17px;
+    }
+
+    .section-title h2{
+        font-size:23px;
+    }
+
+    .section-description{
+        padding-left:55px;
+    }
+
+    .event-grid{
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+
+        gap:12px;
+    }
+
+    .card-image{
+        height:145px;
+    }
+
+    .card-content{
+        padding:11px;
+    }
+
+    .card-title{
+        font-size:14px;
+        min-height:38px;
+    }
+
+    .watch-btn{
+        font-size:11px;
+        padding:9px 7px;
+    }
+
+    .category-menu{
+        display:none !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:430px){
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero-badge{
+        font-size:10px;
+    }
+
+    .event-grid{
+        grid-template-columns:
+            1fr;
+    }
+
+    .card-image{
+        height:200px;
+    }
+
+    .card-title{
+        font-size:16px;
+    }
+
+    .watch-btn{
+        font-size:12px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        scroll-behavior:auto !important;
+        transition:none !important;
+        animation:none !important;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<header class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-badge">
+            🌍 GLOBAL SPORTS • MUSIC • ENTERTAINMENT • EVENTS
+        </div>
+
+        <h1>
+            Your World of
+            <span>Live Events</span>
+        </h1>
+
+        <p>
+            Explore sports, concerts, festivals, entertainment,
+            movies, esports, business events, technology events
+            and more from around the world.
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
+
+<div class="nav-wrap">
+
+    <nav class="nav">
+
+        <a href="#" class="logo">
+
+            <div class="logo-icon">
+                🎟️
+            </div>
+
+            <div class="logo-text">
+                Event <span>Access</span>
+            </div>
+
+        </a>
+
+
+        <!-- DESKTOP -->
+
+        <div class="desktop-nav">
+
+            <a href="#sports" class="nav-link">
+                🏆 Sports
+            </a>
+
+            <a href="#music" class="nav-link">
+                🎵 Music
+            </a>
+
+            <a href="#entertainment" class="nav-link">
+                🎭 Entertainment
+            </a>
+
+            <button
+                class="category-btn"
+                id="categoryBtn"
+                type="button"
+            >
+                ☰ Browse Categories
+                <span class="arrow">▼</span>
+            </button>
+
+        </div>
+
+
+        <!-- MOBILE -->
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Open categories"
+        >
+            ☰
+        </button>
+
+
+        <!-- DESKTOP CATEGORY DROPDOWN -->
+
+        <div
+            class="category-menu"
+            id="categoryMenu"
+        >
+
+            <div class="category-group">
+
+                <h3>🏆 Sports</h3>
+
+                <a href="#sports">Football / Soccer</a>
+                <a href="#sports">NFL</a>
+                <a href="#sports">NBA</a>
+                <a href="#sports">MLB</a>
+                <a href="#sports">NHL</a>
+                <a href="#sports">College Sports</a>
+                <a href="#sports">High School Sports</a>
+                <a href="#sports">MMA</a>
+                <a href="#sports">Boxing</a>
+
+            </div>
+
+
+            <div class="category-group">
+
+                <h3>🎵 Music</h3>
+
+                <a href="#music">Concerts</a>
+                <a href="#music">Pop</a>
+                <a href="#music">Rock</a>
+                <a href="#music">Hip-Hop</a>
+                <a href="#music">Country</a>
+                <a href="#music">Jazz</a>
+                <a href="#music">K-Pop</a>
+                <a href="#music">EDM</a>
+                <a href="#music">World Music</a>
+
+            </div>
+
+
+            <div class="category-group">
+
+                <h3>🎭 Entertainment</h3>
+
+                <a href="#entertainment">Theater</a>
+                <a href="#entertainment">Broadway</a>
+                <a href="#entertainment">Comedy</a>
+                <a href="#entertainment">Stand-Up</a>
+                <a href="#entertainment">Circus</a>
+                <a href="#entertainment">Magic Shows</a>
+                <a href="#entertainment">Dance</a>
+                <a href="#entertainment">Opera</a>
+                <a href="#entertainment">Award Shows</a>
+
+            </div>
+
+
+            <div class="category-group">
+
+                <h3>🎪 Festivals</h3>
+
+                <a href="#festivals">Music Festivals</a>
+                <a href="#festivals">Film Festivals</a>
+                <a href="#festivals">Food Festivals</a>
+                <a href="#festivals">Art Festivals</a>
+                <a href="#festivals">Cultural Festivals</a>
+                <a href="#festivals">Carnivals</a>
+                <a href="#festivals">Christmas Events</a>
+                <a href="#festivals">Halloween Events</a>
+
+            </div>
+
+
+            <div class="category-group">
+
+                <h3>🎬 Movies & Media</h3>
+
+                <a href="#movies">Movie Premieres</a>
+                <a href="#movies">Film Festivals</a>
+                <a href="#movies">Red Carpet</a>
+                <a href="#movies">Anime</a>
+                <a href="#movies">Comic Con</a>
+                <a href="#movies">Fan Conventions</a>
+
+            </div>
+
+
+            <div class="category-group">
+
+                <h3>🎮 Gaming</h3>
+
+                <a href="#gaming">Esports</a>
+                <a href="#gaming">League of Legends</a>
+                <a href="#gaming">Valorant</a>
+                <a href="#gaming">Counter-Strike</a>
+                <a href="#gaming">Fortnite</a>
+                <a href="#gaming">Call of Duty</a>
+                <a href="#gaming">PUBG</a>
+
+            </div>
+
+
+            <div class="category-group">
+
+                <h3>💼 Business</h3>
+
+                <a href="#business">Business Conferences</a>
+                <a href="#business">Startup Events</a>
+                <a href="#business">Finance</a>
+                <a href="#business">Networking</a>
+                <a href="#business">Trade Shows</a>
+                <a href="#business">Product Launches</a>
+
+            </div>
+
+
+            <div class="category-group">
+
+                <h3>💻 Technology</h3>
+
+                <a href="#technology">AI Events</a>
+                <a href="#technology">Tech Conferences</a>
+                <a href="#technology">Cybersecurity</a>
+                <a href="#technology">Robotics</a>
+                <a href="#technology">Cloud Computing</a>
+                <a href="#technology">Developer Events</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOBILE CATEGORY MENU -->
+
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+        >
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    🏆 SPORTS
+                </div>
+
+                <a href="#sports">Football / Soccer</a>
+                <a href="#sports">NFL</a>
+                <a href="#sports">NBA</a>
+                <a href="#sports">MLB</a>
+                <a href="#sports">NHL</a>
+                <a href="#sports">College Sports</a>
+                <a href="#sports">High School Sports</a>
+                <a href="#sports">MMA</a>
+                <a href="#sports">Boxing</a>
+                <a href="#sports">Formula 1</a>
+                <a href="#sports">NASCAR</a>
+                <a href="#sports">Cricket</a>
+                <a href="#sports">Tennis</a>
+                <a href="#sports">Golf</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    🎵 MUSIC
+                </div>
+
+                <a href="#music">Concerts</a>
+                <a href="#music">Pop</a>
+                <a href="#music">Rock</a>
+                <a href="#music">Hip-Hop</a>
+                <a href="#music">Country</a>
+                <a href="#music">Jazz</a>
+                <a href="#music">Classical</a>
+                <a href="#music">K-Pop</a>
+                <a href="#music">EDM</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    🎭 ENTERTAINMENT
+                </div>
+
+                <a href="#entertainment">Theater</a>
+                <a href="#entertainment">Broadway</a>
+                <a href="#entertainment">West End</a>
+                <a href="#entertainment">Comedy</a>
+                <a href="#entertainment">Stand-Up</a>
+                <a href="#entertainment">Circus</a>
+                <a href="#entertainment">Magic Shows</a>
+                <a href="#entertainment">Dance</a>
+                <a href="#entertainment">Opera</a>
+                <a href="#entertainment">Award Shows</a>
+                <a href="#entertainment">Celebrity Events</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    🎪 FESTIVALS
+                </div>
+
+                <a href="#festivals">Music Festivals</a>
+                <a href="#festivals">Film Festivals</a>
+                <a href="#festivals">Food Festivals</a>
+                <a href="#festivals">Art Festivals</a>
+                <a href="#festivals">Cultural Festivals</a>
+                <a href="#festivals">Carnivals</a>
+                <a href="#festivals">Christmas Events</a>
+                <a href="#festivals">Halloween Events</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    🎬 MOVIES & MEDIA
+                </div>
+
+                <a href="#movies">Movie Premieres</a>
+                <a href="#movies">Film Festivals</a>
+                <a href="#movies">Red Carpet</a>
+                <a href="#movies">Anime</a>
+                <a href="#movies">Comic Conventions</a>
+                <a href="#movies">Fan Events</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    🎮 GAMING & ESPORTS
+                </div>
+
+                <a href="#gaming">Esports</a>
+                <a href="#gaming">League of Legends</a>
+                <a href="#gaming">Valorant</a>
+                <a href="#gaming">Counter-Strike</a>
+                <a href="#gaming">Fortnite</a>
+                <a href="#gaming">Call of Duty</a>
+                <a href="#gaming">PUBG</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    💼 BUSINESS
+                </div>
+
+                <a href="#business">Business Conferences</a>
+                <a href="#business">Startup Events</a>
+                <a href="#business">Finance</a>
+                <a href="#business">Networking</a>
+                <a href="#business">Trade Shows</a>
+                <a href="#business">Product Launches</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    💻 TECHNOLOGY
+                </div>
+
+                <a href="#technology">AI Events</a>
+                <a href="#technology">Technology Conferences</a>
+                <a href="#technology">Cybersecurity</a>
+                <a href="#technology">Robotics</a>
+                <a href="#technology">Cloud Computing</a>
+                <a href="#technology">Developer Events</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    👨‍👩‍👧 FAMILY & LIFESTYLE
+                </div>
+
+                <a href="#family">Family Events</a>
+                <a href="#family">Kids Events</a>
+                <a href="#family">Theme Parks</a>
+                <a href="#family">Zoo Events</a>
+                <a href="#family">Outdoor Events</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    🎨 ARTS & CULTURE
+                </div>
+
+                <a href="#arts">Art Exhibitions</a>
+                <a href="#arts">Museum Events</a>
+                <a href="#arts">Photography</a>
+                <a href="#arts">Book Fairs</a>
+                <a href="#arts">Literature Events</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    👗 FASHION
+                </div>
+
+                <a href="#fashion">Fashion Week</a>
+                <a href="#fashion">Fashion Shows</a>
+                <a href="#fashion">Beauty Events</a>
+                <a href="#fashion">Designer Events</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    🍔 FOOD & DRINK
+                </div>
+
+                <a href="#food">Food Festivals</a>
+                <a href="#food">Culinary Events</a>
+                <a href="#food">Coffee Festivals</a>
+                <a href="#food">BBQ Festivals</a>
+                <a href="#food">Street Food</a>
+
+            </div>
+
+
+            <div class="mobile-menu-section">
+
+                <div class="mobile-menu-section-title">
+                    🌍 TRAVEL & OUTDOOR
+                </div>
+
+                <a href="#travel">Travel Expos</a>
+                <a href="#travel">Camping</a>
+                <a href="#travel">Hiking</a>
+                <a href="#travel">Adventure Events</a>
+                <a href="#travel">Beach Events</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</div>
+
+
+<!-- ======================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="container">
+
+
+<!-- SPORTS -->
+
+<section class="section" id="sports">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>🏆 Sports</h2>
+
+        </div>
+
+        <div class="section-description">
+            Global Sports Categories
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=80"
+                    alt="Football"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Football</div>
+                <div class="card-title">
+                    Football & Soccer Events
+                </div>
+                <div class="card-meta">
+                    International • Club • National Teams
+                </div>
+
+                <a
+                    href="https://livepasshub.site"
+                    class="watch-btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80"
+                    alt="American Football"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">NFL</div>
+                <div class="card-title">
+                    NFL & American Football
+                </div>
+                <div class="card-meta">
+                    NFL • College • High School
+                </div>
+
+                <a
+                    href="https://livepasshub.site"
+                    class="watch-btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=80"
+                    alt="Basketball"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Basketball</div>
+                <div class="card-title">
+                    NBA & Basketball Events
+                </div>
+                <div class="card-meta">
+                    NBA • WNBA • College
+                </div>
+
+                <a
+                    href="https://livepasshub.site"
+                    class="watch-btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=900&q=80"
+                    alt="Cricket"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Cricket</div>
+                <div class="card-title">
+                    International Cricket
+                </div>
+                <div class="card-meta">
+                    Test • ODI • T20 • Leagues
+                </div>
+
+                <a
+                    href="https://livepasshub.site"
+                    class="watch-btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=900&q=80"
+                    alt="Tennis"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Tennis</div>
+                <div class="card-title">
+                    Tennis Championships
+                </div>
+                <div class="card-meta">
+                    ATP • WTA • Grand Slams
+                </div>
+
+                <a
+                    href="https://livepasshub.site"
+                    class="watch-btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=900&q=80"
+                    alt="Formula 1"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Motorsport</div>
+                <div class="card-title">
+                    Formula 1 & Racing
+                </div>
+                <div class="card-meta">
+                    F1 • NASCAR • MotoGP • IndyCar
+                </div>
+
+                <a
+                    href="https://livepasshub.site"
+                    class="watch-btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=80"
+                    alt="MMA"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Combat Sports</div>
+                <div class="card-title">
+                    MMA & Fighting Events
+                </div>
+                <div class="card-meta">
+                    MMA • Boxing • Wrestling
+                </div>
+
+                <a
+                    href="https://livepasshub.site"
+                    class="watch-btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=900&q=80"
+                    alt="Swimming"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Aquatics</div>
+                <div class="card-title">
+                    Swimming & Aquatic Sports
+                </div>
+                <div class="card-meta">
+                    Championships • Olympics
+                </div>
+
+                <a
+                    href="https://livepasshub.site"
+                    class="watch-btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<section class="section" id="music">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>🎵 Music & Concerts</h2>
+
+        </div>
+
+        <div class="section-description">
+            Live Music Around the World
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=80"
+                    alt="Concert"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Concerts</div>
+                <div class="card-title">
+                    Live Concert Events
+                </div>
+                <div class="card-meta">
+                    Worldwide Music Events
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=900&q=80"
+                    alt="Music festival"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Music Festival</div>
+                <div class="card-title">
+                    Global Music Festivals
+                </div>
+                <div class="card-meta">
+                    Pop • Rock • EDM • Hip-Hop
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=900&q=80"
+                    alt="Singer"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Artists</div>
+                <div class="card-title">
+                    Artist & World Tours
+                </div>
+                <div class="card-meta">
+                    Arena • Stadium • World Tours
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80"
+                    alt="DJ"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">DJ & EDM</div>
+                <div class="card-title">
+                    Electronic Music Events
+                </div>
+                <div class="card-meta">
+                    DJs • EDM • Electronic
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ENTERTAINMENT -->
+
+<section class="section" id="entertainment">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>🎭 Entertainment</h2>
+
+        </div>
+
+        <div class="section-description">
+            Shows, Theater & Entertainment
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=900&q=80"
+                    alt="Theater"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Theater</div>
+                <div class="card-title">
+                    Theater & Broadway Shows
+                </div>
+                <div class="card-meta">
+                    Broadway • West End • Musicals
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&w=900&q=80"
+                    alt="Comedy"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Comedy</div>
+                <div class="card-title">
+                    Comedy & Stand-Up
+                </div>
+                <div class="card-meta">
+                    Comedy Shows • Live Performances
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80"
+                    alt="Dance"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Performing Arts</div>
+                <div class="card-title">
+                    Dance, Ballet & Opera
+                </div>
+                <div class="card-meta">
+                    Performing Arts Worldwide
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80"
+                    alt="Celebrity event"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Celebrity Events</div>
+                <div class="card-title">
+                    Celebrity & Fan Events
+                </div>
+                <div class="card-meta">
+                    Meet & Greets • Fan Events
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FESTIVALS -->
+
+<section class="section" id="festivals">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>🎪 Festivals</h2>
+
+        </div>
+
+        <div class="section-description">
+            Festivals & Cultural Events
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=80"
+                    alt="Festival"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Festivals</div>
+                <div class="card-title">
+                    Major Global Festivals
+                </div>
+                <div class="card-meta">
+                    Music • Culture • Arts
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80"
+                    alt="Carnival"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Carnivals</div>
+                <div class="card-title">
+                    Carnivals & Street Festivals
+                </div>
+                <div class="card-meta">
+                    Cultural • Community • Seasonal
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80"
+                    alt="Food festival"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Food Festivals</div>
+                <div class="card-title">
+                    Food & Culinary Festivals
+                </div>
+                <div class="card-meta">
+                    Food • Cooking • Culinary
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=900&q=80"
+                    alt="Cultural event"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Culture</div>
+                <div class="card-title">
+                    Cultural Celebrations
+                </div>
+                <div class="card-meta">
+                    Heritage • Culture • Community
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOVIES -->
+
+<section class="section" id="movies">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>🎬 Movies & Media</h2>
+
+        </div>
+
+        <div class="section-description">
+            Cinema & Media Events
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80"
+                    alt="Cinema"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Cinema</div>
+                <div class="card-title">
+                    Movie Premieres & Cinema
+                </div>
+                <div class="card-meta">
+                    Premieres • Screenings • Media
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?auto=format&fit=crop&w=900&q=80"
+                    alt="Red carpet"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Red Carpet</div>
+                <div class="card-title">
+                    Red Carpet & Awards
+                </div>
+                <div class="card-meta">
+                    Film • Television • Entertainment
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80"
+                    alt="Gaming"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Anime & Comics</div>
+                <div class="card-title">
+                    Anime & Comic Conventions
+                </div>
+                <div class="card-meta">
+                    Anime • Comics • Fan Events
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80"
+                    alt="Film festival"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Film Festivals</div>
+                <div class="card-title">
+                    International Film Festivals
+                </div>
+                <div class="card-meta">
+                    Global Cinema Events
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GAMING -->
+
+<section class="section" id="gaming">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>🎮 Gaming & Esports</h2>
+
+        </div>
+
+        <div class="section-description">
+            Competitive Gaming
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=900&q=80"
+                    alt="Esports"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Esports</div>
+                <div class="card-title">
+                    Global Esports Championships
+                </div>
+                <div class="card-meta">
+                    Competitive Gaming
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=900&q=80"
+                    alt="Gaming tournament"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Gaming</div>
+                <div class="card-title">
+                    Gaming Tournaments
+                </div>
+                <div class="card-meta">
+                    FPS • Battle Royale • Strategy
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=80"
+                    alt="Gaming event"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Game Events</div>
+                <div class="card-title">
+                    Gaming Conventions
+                </div>
+                <div class="card-meta">
+                    Developers • Players • Fans
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1603481546238-487240415921?auto=format&fit=crop&w=900&q=80"
+                    alt="Esports arena"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Championships</div>
+                <div class="card-title">
+                    Esports Finals & Championships
+                </div>
+                <div class="card-meta">
+                    Major Competitive Events
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH LIVE
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BUSINESS -->
+
+<section class="section" id="business">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>💼 Business Events</h2>
+
+        </div>
+
+        <div class="section-description">
+            Conferences & Professional Events
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=900&q=80"
+                    alt="Business conference"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Conference</div>
+                <div class="card-title">
+                    Global Business Conferences
+                </div>
+                <div class="card-meta">
+                    Business • Leadership • Strategy
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80"
+                    alt="Networking"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Networking</div>
+                <div class="card-title">
+                    Networking & Startup Events
+                </div>
+                <div class="card-meta">
+                    Entrepreneurs • Investors • Founders
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80"
+                    alt="Trade show"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Trade Shows</div>
+                <div class="card-title">
+                    Trade Shows & Expos
+                </div>
+                <div class="card-meta">
+                    Industry • Products • Innovation
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=900&q=80"
+                    alt="Keynote"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Keynotes</div>
+                <div class="card-title">
+                    Major Business Keynotes
+                </div>
+                <div class="card-meta">
+                    CEOs • Leaders • Experts
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TECHNOLOGY -->
+
+<section class="section" id="technology">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>💻 Technology</h2>
+
+        </div>
+
+        <div class="section-description">
+            Technology & Innovation Events
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80"
+                    alt="Technology"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Technology</div>
+                <div class="card-title">
+                    Global Technology Conferences
+                </div>
+                <div class="card-meta">
+                    Innovation • Software • Hardware
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80"
+                    alt="Artificial Intelligence"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Artificial Intelligence</div>
+                <div class="card-title">
+                    AI & Machine Learning Events
+                </div>
+                <div class="card-meta">
+                    AI • ML • Future Technology
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=80"
+                    alt="Cybersecurity"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Cybersecurity</div>
+                <div class="card-title">
+                    Cybersecurity Conferences
+                </div>
+                <div class="card-meta">
+                    Security • Privacy • Technology
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=900&q=80"
+                    alt="Robotics"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Robotics</div>
+                <div class="card-title">
+                    Robotics & Innovation Events
+                </div>
+                <div class="card-meta">
+                    Robotics • Science • Innovation
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAMILY -->
+
+<section class="section" id="family">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>👨‍👩‍👧 Family & Lifestyle</h2>
+
+        </div>
+
+        <div class="section-description">
+            Family-Friendly Events
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1504159506876-f8338247a14a?auto=format&fit=crop&w=900&q=80"
+                    alt="Family event"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Family</div>
+                <div class="card-title">
+                    Family Events & Activities
+                </div>
+                <div class="card-meta">
+                    Families • Kids • Community
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1564053489984-317bbd824340?auto=format&fit=crop&w=900&q=80"
+                    alt="Theme park"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Theme Parks</div>
+                <div class="card-title">
+                    Theme Parks & Attractions
+                </div>
+                <div class="card-meta">
+                    Attractions • Adventure • Family
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1534567110243-8875d64ca8ff?auto=format&fit=crop&w=900&q=80"
+                    alt="Zoo"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Wildlife</div>
+                <div class="card-title">
+                    Zoo & Aquarium Events
+                </div>
+                <div class="card-meta">
+                    Wildlife • Education • Family
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+                    alt="Outdoor event"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Outdoor</div>
+                <div class="card-title">
+                    Outdoor & Adventure Events
+                </div>
+                <div class="card-meta">
+                    Adventure • Nature • Recreation
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ARTS -->
+
+<section class="section" id="arts">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>🎨 Arts & Culture</h2>
+
+        </div>
+
+        <div class="section-description">
+            Art, Museums & Culture
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=900&q=80"
+                    alt="Art exhibition"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Art</div>
+                <div class="card-title">
+                    Art Exhibitions & Galleries
+                </div>
+                <div class="card-meta">
+                    Contemporary • Classic • Modern Art
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=900&q=80"
+                    alt="Museum"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Museums</div>
+                <div class="card-title">
+                    Museum Events
+                </div>
+                <div class="card-meta">
+                    History • Science • Culture
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=80"
+                    alt="Books"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Literature</div>
+                <div class="card-title">
+                    Book Fairs & Literature
+                </div>
+                <div class="card-meta">
+                    Books • Authors • Literature
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80"
+                    alt="Creative art"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Creative Arts</div>
+                <div class="card-title">
+                    Creative & Cultural Events
+                </div>
+                <div class="card-meta">
+                    Arts • Crafts • Culture
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FASHION -->
+
+<section class="section" id="fashion">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>👗 Fashion & Beauty</h2>
+
+        </div>
+
+        <div class="section-description">
+            Fashion & Lifestyle Events
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80"
+                    alt="Fashion"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Fashion Week</div>
+                <div class="card-title">
+                    Global Fashion Week
+                </div>
+                <div class="card-meta">
+                    Designers • Runway • Collections
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=900&q=80"
+                    alt="Fashion show"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Fashion Shows</div>
+                <div class="card-title">
+                    Designer Fashion Shows
+                </div>
+                <div class="card-meta">
+                    Luxury • Designers • Runway
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80"
+                    alt="Beauty"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Beauty</div>
+                <div class="card-title">
+                    Beauty & Makeup Events
+                </div>
+                <div class="card-meta">
+                    Beauty • Makeup • Lifestyle
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80"
+                    alt="Jewelry"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Luxury</div>
+                <div class="card-title">
+                    Jewelry & Luxury Events
+                </div>
+                <div class="card-meta">
+                    Jewelry • Luxury • Design
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOD -->
+
+<section class="section" id="food">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>🍔 Food & Drink</h2>
+
+        </div>
+
+        <div class="section-description">
+            Culinary & Food Events
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80"
+                    alt="Food event"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Food</div>
+                <div class="card-title">
+                    Global Food Festivals
+                </div>
+                <div class="card-meta">
+                    Food • Taste • Culture
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=80"
+                    alt="Chef"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Culinary</div>
+                <div class="card-title">
+                    Chef & Culinary Events
+                </div>
+                <div class="card-meta">
+                    Chefs • Cooking • Restaurants
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80"
+                    alt="Coffee"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Coffee</div>
+                <div class="card-title">
+                    Coffee Festivals & Events
+                </div>
+                <div class="card-meta">
+                    Coffee • Cafes • Culture
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
+                    alt="Restaurant"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Restaurants</div>
+                <div class="card-title">
+                    Restaurant & Taste Events
+                </div>
+                <div class="card-meta">
+                    Dining • Food • Culinary
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TRAVEL -->
+
+<section class="section" id="travel">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-line"></div>
+
+            <h2>🌍 Travel & Outdoor</h2>
+
+        </div>
+
+        <div class="section-description">
+            Travel, Adventure & Outdoor Events
+        </div>
+
+    </div>
+
+
+    <div class="event-grid">
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80"
+                    alt="Travel"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Travel</div>
+                <div class="card-title">
+                    Travel & Tourism Expos
+                </div>
+                <div class="card-meta">
+                    Travel • Tourism • Destinations
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?auto=format&fit=crop&w=900&q=80"
+                    alt="Camping"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Camping</div>
+                <div class="card-title">
+                    Camping & Outdoor Events
+                </div>
+                <div class="card-meta">
+                    Camping • Hiking • Nature
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                    alt="Adventure"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Adventure</div>
+                <div class="card-title">
+                    Adventure & Outdoor Sports
+                </div>
+                <div class="card-meta">
+                    Adventure • Nature • Sports
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+
+        <div class="event-card">
+            <div class="card-image">
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+                    alt="Beach"
+                >
+                <div class="live-badge">
+                    <span class="live-dot"></span> LIVE
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="card-category">Beach</div>
+                <div class="card-title">
+                    Beach & Outdoor Festivals
+                </div>
+                <div class="card-meta">
+                    Beach • Surf • Outdoor
+                </div>
+
+                <a href="https://livepasshub.site"
+                   class="watch-btn"
+                   target="_blank"
+                   rel="noopener">
+                    ▶ WATCH NOW
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        Event <span>Access</span>
+    </div>
+
+    <p>
+        Discover sports, music, entertainment and events
+        from around the world.
+    </p>
+
+    <p>
+        © 2026 EventAccess. All rights reserved.
+    </p>
+
+</footer>
+
+
+</div>
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+const categoryBtn =
+    document.getElementById("categoryBtn");
+
+const categoryMenu =
+    document.getElementById("categoryMenu");
+
+const mobileMenuBtn =
+    document.getElementById("mobileMenuBtn");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+
+/* DESKTOP CATEGORY MENU */
+
+if(categoryBtn){
+
+    categoryBtn.addEventListener("click", function(e){
+
+        e.stopPropagation();
+
+        categoryMenu.classList.toggle("show");
+
+        categoryBtn.classList.toggle("active");
+
+    });
+
+}
+
+
+/* MOBILE MENU */
+
+mobileMenuBtn.addEventListener(
+    "click",
+    function(e){
+
+        e.stopPropagation();
+
+        mobileMenu.classList.toggle("show");
+
+        if(mobileMenu.classList.contains("show")){
+
+            mobileMenuBtn.innerHTML = "✕";
+
+        }else{
+
+            mobileMenuBtn.innerHTML = "☰";
+
+        }
+
+    }
+);
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+document.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            categoryMenu &&
+            !categoryMenu.contains(e.target) &&
+            !categoryBtn.contains(e.target)
+        ){
+
+            categoryMenu.classList.remove("show");
+
+            categoryBtn.classList.remove("active");
+
+        }
+
+
+        if(
+            !mobileMenu.contains(e.target) &&
+            !mobileMenuBtn.contains(e.target)
+        ){
+
+            mobileMenu.classList.remove("show");
+
+            mobileMenuBtn.innerHTML = "☰";
+
+        }
+
+    }
+);
+
+
+/* CLOSE MOBILE MENU AFTER CLICKING LINK */
+
+document.querySelectorAll(
+    ".mobile-menu a"
+).forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            mobileMenu.classList.remove("show");
+
+            mobileMenuBtn.innerHTML = "☰";
+
+        }
+    );
+
+});
+
+
+/* CLOSE DESKTOP MENU AFTER CATEGORY CLICK */
+
+document.querySelectorAll(
+    ".category-menu a"
+).forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            categoryMenu.classList.remove("show");
+
+            categoryBtn.classList.remove("active");
+
+        }
+    );
+
+});
+
+
+/* ESC KEY */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Escape"){
+
+            if(categoryMenu){
+                categoryMenu.classList.remove("show");
+            }
+
+            if(categoryBtn){
+                categoryBtn.classList.remove("active");
+            }
+
+            mobileMenu.classList.remove("show");
+
+            mobileMenuBtn.innerHTML = "☰";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
